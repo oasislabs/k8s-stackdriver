@@ -1,11 +1,26 @@
+##
+# Please keep gems in alphabetical order and leave comments for explicit
+# dependencies between gems that prevent a  gem from being updated to the latest
+# version.
+##
 source 'https://rubygems.org'
 
-gem 'fluentd', '~>0.12.32'
-gem 'fluent-plugin-record-reformer', '~>0.8.3'
-gem 'fluent-plugin-systemd', '=0.0.9'
-gem 'systemd-journal', '=1.3.1'
-gem 'fluent-plugin-google-cloud', '~>0.6.12'
-gem 'fluent-plugin-detect-exceptions', '~>0.0.8'
-gem 'fluent-plugin-prometheus', '~>0.2.1'
-gem 'fluent-plugin-multi-format-parser', '~>0.1.1'
-gem 'oj', '~>2.18.1'
+# fluent-plugin-google-cloud (~> 0.7.13) depends on fluentd (= 1.4.2)
+gem 'fluentd', '=1.4.2'
+
+gem "fluent-plugin-concat", "~> 2.3.0"
+gem 'fluent-plugin-detect-exceptions', '~> 0.0.12'
+gem 'fluent-plugin-elasticsearch', '~> 3.5.2'
+gem 'fluent-plugin-google-cloud', '~>0.7.13'
+gem "fluent-plugin-grok-parser", "~> 2.5.1"
+gem "fluent-plugin-kubernetes_metadata_filter", "~> 2.1.6"
+gem 'fluent-plugin-multi-format-parser', '~>1.0.0'
+gem 'fluent-plugin-prometheus', '~>1.4.0'
+gem 'fluent-plugin-record-reformer', '~>0.9.1'
+gem "fluent-plugin-rewrite-tag-filter", "~> 2.2.0"
+gem 'fluent-plugin-s3', '~> 1.1.10'
+gem 'fluent-plugin-systemd', '~> 1.0.2'
+gem 'oj', '~>3.7.12'
+
+# fluent-plugin-systemd (~> 1.0.2) depends on systemd-journal (~> 1.3.2)
+gem 'systemd-journal', '~> 1.3.2'
